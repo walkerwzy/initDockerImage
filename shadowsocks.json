@@ -1,0 +1,10 @@
+{
+    "server":"162.243.159.135",
+    "server_port":8080,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"walker",
+    "timeout":300,
+    "method":"rc4-md5",
+    "fast_open": true
+}
