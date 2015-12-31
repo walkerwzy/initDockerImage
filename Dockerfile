@@ -12,6 +12,7 @@ RUN mkdir -p /var/log/supervisor
 run mkdir -p /var/www/aria2 /var/www/html/app
 run mkdir -p /var/aria2
 run touch /var/aria2/aria2.session
+run echo "Listen 8081" >> /etc/apache2/ports.conf
 run git clone https://github.com/ziahamza/webui-aria2.git /var/www/aria2
 
 ######## ssh start
