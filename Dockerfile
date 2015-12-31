@@ -6,8 +6,8 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 #RUN apt-get install -y --force-yes  perl-base=5.14.2-6ubuntu2
+#RUN apt-get install -y apache2.2-common
 
-RUN apt-get install -y apache2.2-common
 RUN apt-get install -y openssh-server apache2 supervisor
 run apt-get install -y python-pip
 run mkdir -p /var/lock/apache2 /var/run/apache2
