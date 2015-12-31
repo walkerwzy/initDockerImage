@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM ubuntu:13.04
 MAINTAINER walkerwzy@gmail.com
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
