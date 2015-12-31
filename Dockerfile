@@ -32,7 +32,7 @@ run pip install shadowsocks
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 copy shadowsocks.json /etc/shadowsocks.json
-copy aria2_web.conf /etc/apache2/siets-available/aria2.conf
+copy aria2_web.conf /etc/apache2/sites-enabled/aria2_web.conf
 copy aria2.conf /var/aria2/aria2.conf
 
 
