@@ -38,5 +38,3 @@ copy aria2.conf /var/aria2/aria2.conf
 
 EXPOSE 22 80 8080 8081 6800
 CMD ["/usr/bin/supervisord"]
-
-# cmd: docker run -d --restart=always -p 80:80 -p 8080:8080 -p 8022:22 {name}
