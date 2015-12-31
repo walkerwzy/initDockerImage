@@ -1,15 +1,10 @@
 FROM ubuntu:14.04
 MAINTAINER walkerwzy@gmail.com
 
-#RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
 
-#RUN apt-get install -y --force-yes  perl-base=5.14.2-6ubuntu2
-#RUN apt-get install -y apache2.2-common
-
 RUN apt-get install -y openssh-server apache2 supervisor
-run apt-get install -y python-pip
 run mkdir -p /var/lock/apache2 /var/run/apache2
 RUN mkdir -p /var/run/sshd
 RUN mkdir -p /var/log/supervisor
@@ -28,7 +23,11 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 # ssh end
 
-run pip install shadowsocks
+# Install ShadownSocks from apt repo
+RUN printf "deb http://shadowsocks.org/debian wheezy main" >> /etc/apt/sources.list
+RUN apt-get update && apt-get install -y --force-yes shadowsocks-libev
+
+# copy local configs
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 copy shadowsocks.json /etc/shadowsocks.json
