@@ -38,9 +38,9 @@ RUN apt-get upgrade -y
 
 
 ####php
-copy php.bash /tmp/install_php.bash
-run chmod +x /tmp/install_php.bash
-run bash /tmp/install_php.bash
+copy php.sh /tmp/install_php.sh
+run chmod +x /tmp/install_php.sh
+run bash /tmp/install_php.sh
 
 
 # EXPOSE 22 80 8080 8081 6800
