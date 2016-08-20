@@ -1,13 +1,15 @@
 FROM ubuntu:14.04
 MAINTAINER walkerwzy@gmail.com
 
-run add-apt-repository ppa:ondrej/php
-
 RUN apt-get update
 RUN apt-get upgrade -y
 
 ### ppa
 run apt-get install -y software-properties-common
+run add-apt-repository ppa:ondrej/php
+
+RUN apt-get update
+RUN apt-get upgrade -y
 
 RUN apt-get install -y openssh-server apache2 supervisor
 run apt-get install -y python-pip aria2 git php7.0
