@@ -2,8 +2,8 @@ FROM ubuntu:14.04
 MAINTAINER walkerwzy@gmail.com
 
 ### ppa
-apt-get install software-properties-common
-add-apt-repository ppa:ondrej/php
+run apt-get install software-properties-common
+run add-apt-repository ppa:ondrej/php
 
 RUN apt-get update
 RUN apt-get upgrade -y
