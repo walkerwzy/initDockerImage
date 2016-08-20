@@ -2,18 +2,18 @@ FROM ubuntu:14.04
 MAINTAINER walkerwzy@gmail.com
 
 RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get upgrade -y --force-yes
 
 ### ppa
-run apt-get install -y software-properties-common
+run apt-get install -y --force-yes software-properties-common
 run add-apt-repository ppa:ondrej/php
 
 RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get upgrade -y --force-yes
 
-RUN apt-get install -y openssh-server apache2 supervisor
-run apt-get install -y python-pip aria2 git php7.0
-run apt-get install -y libapache2-mod-php7.0 php7.0-mysql php7.0-curl php7.0-json
+RUN apt-get install -y --force-yes openssh-server apache2 supervisor
+run apt-get install -y --force-yes python-pip aria2 git php7.0
+run apt-get install -y --force-yes libapache2-mod-php7.0 php7.0-mysql php7.0-curl php7.0-json
 run mkdir -p /var/lock/apache2 /var/run/apache2
 RUN mkdir -p /var/run/sshd
 RUN mkdir -p /var/log/supervisor
