@@ -37,13 +37,13 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 ######## ssh end
 
-run pip install shadowsocks
+# run pip install shadowsocks
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-copy shadowsocks.json /etc/shadowsocks.json
+# copy shadowsocks.json /etc/shadowsocks.json
 copy aria2_web.conf /etc/apache2/sites-enabled/aria2_web.conf
 copy aria2.conf /var/aria2/aria2.conf
 
-
-EXPOSE 22 80 8080 8081 6800
+# 8080(shadowsocks)
+EXPOSE 22 80 8081 6800
 CMD ["/usr/bin/supervisord"]
